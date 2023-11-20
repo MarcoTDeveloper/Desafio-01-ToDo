@@ -6,7 +6,6 @@ export function Header() {
     return (
         <header className={styles.header}>
             <img src={todoLogo} alt='Logotipo do ToDo'/>
-            <strong>todo</strong>
         </header>
     )
 }

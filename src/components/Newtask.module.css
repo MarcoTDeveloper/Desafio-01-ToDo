@@ -1,0 +1,45 @@
+.createNewTask {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.createNewTask textarea {
+    width: 100%;
+    background: var(--gray-500);
+    border: 0;
+    resize: none;
+    
+    height: 3.375rem;
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--gray-100);
+    line-height: 1.4;
+    outline: 1px solid black;
+}
+
+.createNewTask button[type=submit] {
+    padding: 1rem;
+    margin-left: 0.5rem;
+    border-radius: 8px;
+    border: 0;
+    background: var(--blue-dark);
+    color: var(--gray-100);
+    font-weight: 400;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.5rem;
+
+    transition: background-color 0.1s;
+}
+
+.createNewTask button[type=submit]:hover {
+    background: var(--blue);
+}
