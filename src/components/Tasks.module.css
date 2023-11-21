@@ -1,4 +1,58 @@
 .tasks {
-    background: transparent;
-    
+    margin: 4rem auto;
+}
+
+.tasksHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.createTasksColor {
+    color: var(--blue);
+    font-weight: 700;
+    margin-right: 0.5rem;
+}
+
+.counterTasksCreated {
+    padding: 2px 8px;
+    border-radius: 16px;
+    font-size: 0.75rem;
+    color: var(--gray-200);
+    background-color: var(--gray-400);
+    font-weight: 700;
+}
+
+.completedTasksColor {
+    color: var(--purple);
+    font-weight: 700;
+    margin-right: 0.5rem;
+}
+
+.counterTasksCompleted {
+    padding: 2px 8px;
+    border-radius: 16px;
+    font-size: 0.75rem;
+    color: var(--gray-200);
+    background-color: var(--gray-400);
+    font-weight: 700;
+}
+
+.noTasks {
+    padding: 4rem 1rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--gray-400);
+    border-radius: 8px;
+}
+
+.noTasksContent {
+    padding: 4rem auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: var(--gray-300);
+}
+
+.nothingIcon {
+    margin-bottom: 1rem;
 }
