@@ -1,0 +1,40 @@
+.taskBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    height: 4.5rem;
+    margin-bottom: 0.75rem;
+    background-color: var(--gray-500);
+    border-radius: 8px;
+    outline: 1px solid var(--gray-400);
+}
+
+.checkboxList {
+    display: flex;
+}
+
+.checkboxList p {
+    margin-left: 12px;
+}
+
+.checkboxList input:checked + p {
+    text-decoration: line-through;
+    color: var(--gray-300);
+}
+
+.taskBox button {
+    background: transparent;
+    border: 0;
+    color: var(--gray-300);
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 2px;
+}
+
+.taskBox button:hover {
+    color: var(--red);
+}

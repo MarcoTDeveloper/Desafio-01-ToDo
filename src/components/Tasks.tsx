@@ -1,6 +1,7 @@
 import styles from './Tasks.module.css'
 
 import clipboardIcon from '../assets/clipboard-icon.svg';
+import { TaskCreated } from './TaskCreated';
 
 export function Tasks() {
     return(
@@ -35,6 +36,12 @@ export function Tasks() {
                         <strong>Você ainda não tem tarefas cadastradas</strong>
                         <p>Crie tarefas e organize seus itens a fazer</p>
                     </div>
+            </div>
+
+            <div className={styles.taskCreated}>
+                <TaskCreated />
+                <TaskCreated />
+                <TaskCreated />
             </div>
         </div>
     )
