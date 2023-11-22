@@ -25,6 +25,7 @@
     border-radius: 4px;
     padding: 5px 4px 2px 4px;
     transition: 0.1s background-color;
+    cursor: pointer;
 }
 
 .launchedTasks button line, .container button path {

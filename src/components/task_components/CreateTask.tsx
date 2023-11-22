@@ -1,6 +1,6 @@
 import { Trash } from 'phosphor-react';
-import styles from './CreateTask.module.css';
 import { Checkbox } from './Checkbox';
+import styles from './CreateTask.module.css';
 
 export function TaskCreated() {
     return(
