@@ -1,16 +1,14 @@
-import { SearchBarButton } from './SearchBarButton';
+import { SearchBarButton } from './InputButton';
 
-import styles from './SearchBar.module.css';
+import styles from './Input.module.css';
 
 export function SearchBar() {
     return(
         <div>
             <form className={styles.createNewTask}>
-
                 <textarea
                     placeholder='Adicione uma nova tarefa'
                 />
-
                 <SearchBarButton/>
             </form>
         </div>

@@ -1,26 +1,32 @@
 import { Header } from "./components/Header";
-import { SearchBar } from "./components/SearchBar";
-import { Tasks } from "./components/task_components/Tasks";
+import { SearchBar } from "./components/Input";
+// import { Tasks } from "./components/task_components/Tasks";
 
 import styles from './App.module.css';
 
 import './global.css';
+import { TaskHeader } from "./components/task_components/HeaderTasks";
+import { NoTasks } from "./components/task_components/NoTasks";
 
 export function App() {
 
   return (
-    <div>
+    <main>
       <Header />
-
-      <div className={styles.wrapper}>
-        <SearchBar />
+      
+      <section className={styles.wrapper}>
+        <div>
+          <SearchBar />
+        </div>
 
         <div>
-          <Tasks />
+          <TaskHeader />
         </div>
-      </div>
 
-
-    </div>
+        <div>
+          <NoTasks />
+        </div>
+      </section>
+    </main>
   )
 }

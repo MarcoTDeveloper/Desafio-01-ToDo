@@ -1,5 +1,5 @@
 import { PlusCircle } from 'phosphor-react'
-import styles from './SearchBarButton.module.css'
+import styles from './InputButton.module.css'
 
 export function SearchBarButton() {
     return(
