@@ -22,3 +22,8 @@
 .buttonInBar:hover {
     background: var(--blue);
 }
+
+.buttonInBar:disabled {
+    pointer-events: none;
+    filter: brightness(.9);
+}

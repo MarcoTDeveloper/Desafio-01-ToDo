@@ -1,13 +1,19 @@
 import { Trash } from 'phosphor-react';
-import { Checkbox } from './Checkbox';
-import styles from './CreateTask.module.css';
 
-export function TaskCreated() {
+import { Checkbox } from './Checkbox';
+import styles from './Index.module.css';
+
+type TaskProps = {
+    id: string;
+    content: string;
+}
+
+export function Task({id, content}: TaskProps) {
     return(
         <div className={styles.launchedTasks}>
             <div className={styles.checkboxTasks}>
-                <Checkbox />
-                <p>Estudar Html, Css, Php, SQL. Após isso começar o segundo modulo de React da RocketSeat.</p>
+                <Checkbox id={id} />
+                <p>{content}</p>
             </div>
 
             <button>

@@ -4,7 +4,7 @@
     align-items: center;
 }
 
-.createNewTask textarea {
+.createNewTask input {
     width: 100%;
     background: var(--gray-500);
     border: 0;
