@@ -1,0 +1,24 @@
+.buttonInBar {
+    padding: 1rem;
+    margin-left: 0.5rem;
+    border-radius: 8px;
+    border: 0;
+    background: var(--blue-dark);
+    color: var(--gray-100);
+    font-weight: 400;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.5rem;
+
+    transition: background-color 0.1s;
+}
+
+.buttonInBar:hover {
+    background: var(--blue);
+}

@@ -1,6 +1,6 @@
 import { Header } from "./components/Header";
-import { NewTask } from "./components/NewTask";
-import { Tasks } from "./components/Tasks";
+import { SearchBar } from "./components/SearchBar";
+import { Tasks } from "./components/task_components/Tasks";
 
 import styles from './App.module.css';
 
@@ -8,18 +8,13 @@ import './global.css';
 
 export function App() {
 
-  const tasks = [
-    {
-      
-    }
-  ];
-
   return (
     <div>
       <Header />
 
       <div className={styles.wrapper}>
-        <NewTask />
+        <SearchBar />
+
         <div>
           <Tasks />
         </div>

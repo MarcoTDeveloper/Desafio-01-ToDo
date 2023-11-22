@@ -1,0 +1,19 @@
+.createNewTask {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.createNewTask textarea {
+    width: 100%;
+    background: var(--gray-500);
+    border: 0;
+    resize: none;
+    
+    height: 3.375rem;
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--gray-100);
+    line-height: 1.4;
+    outline: 1px solid var(--gray-700);
+}

@@ -1,5 +1,5 @@
 import { Trash } from 'phosphor-react';
-import styles from './TaskCreated.module.css';
+import styles from './CreateTask.module.css';
 
 export function TaskCreated() {
     return(
