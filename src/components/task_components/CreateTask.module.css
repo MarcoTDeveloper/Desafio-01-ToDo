@@ -1,0 +1,37 @@
+.launchedTasks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--gray-500);
+    border-radius: 8px;
+    outline: 1px solid var(--gray-400);
+    margin: 0.75rem;
+}
+
+.checkboxTasks {
+    display: flex;
+}
+
+.launchedTasks p {
+    font-size: 0.875rem;
+    line-height: 140%;
+}
+
+.launchedTasks button {
+    color: var(--gray-300);
+    border: none;
+    background-color: transparent;
+    border-radius: 4px;
+    padding: 5px 4px 2px 4px;
+    transition: 0.1s background-color;
+}
+
+.launchedTasks button line, .container button path {
+    transition: 0.1s fill;
+}
+
+.launchedTasks button:hover {
+    background-color: var(--gray-400);
+    color: var(--red);
+}

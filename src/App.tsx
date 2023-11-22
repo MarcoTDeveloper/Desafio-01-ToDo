@@ -7,6 +7,7 @@ import styles from './App.module.css';
 import './global.css';
 import { TaskHeader } from "./components/task_components/HeaderTasks";
 import { NoTasks } from "./components/task_components/NoTasks";
+import { TaskCreated } from "./components/task_components/CreateTask";
 
 export function App() {
 
@@ -26,6 +27,9 @@ export function App() {
         <div>
           <NoTasks />
         </div>
+          <TaskCreated/>
+          <TaskCreated/>
+          <TaskCreated/>
       </section>
     </main>
   )
