@@ -14,6 +14,18 @@ export type TasksDataProps = {
 export function Tasks() {
     const [tasks, setTasks] = useState<TasksDataProps[]>([]);
 
+    const handleTaskCheck = (taskId: string, checked: boolean) => {
+        const updatedTasks = tasks.map((task) =>
+            task.id === taskId ? { ...task, checked } : task
+        );
+        setTasks(updatedTasks);
+    };
+
+    const handleTaskDelete = (taskId: string) => {
+        const updatedTasks = tasks.filter((task) => task.id !== taskId);
+        setTasks(updatedTasks);
+    };
+
     return(
         <>
             <CreateTask
@@ -25,11 +37,14 @@ export function Tasks() {
             />
             {tasks.length === 0 ? (
                 <NoTasks />
-            ) : tasks.map(({id, content}) => (
+            ) : tasks.map(({id, content, checked}) => (
                 <Task
                     key={id}
                     id={id}
                     content={content}
+                    checked={checked}
+                    onTaskCheck={handleTaskCheck}
+                    onTaskDelete={handleTaskDelete}
                 />
             ))}
         </>

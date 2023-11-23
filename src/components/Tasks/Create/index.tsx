@@ -2,7 +2,9 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { v4 as uuid } from "uuid";
 
 import { CreateTaskButton } from './Button';
+
 import styles from './index.module.css';
+
 import { TasksDataProps } from '..';
 
 type CreateTaskFormData = {
