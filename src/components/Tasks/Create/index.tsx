@@ -20,11 +20,11 @@ export function CreateTask({ setTasks }: CreateTaskProps) {
     const watchContent = watch("content");
 
     const handleCreateTask: SubmitHandler<CreateTaskFormData> = ({content}) => {
-        setTasks(tasks => [...tasks, {
+        setTasks(tasks => [{
             id: uuid(),
             content,
             checked: false
-        }]);
+        },...tasks]);
         reset();
     };
 

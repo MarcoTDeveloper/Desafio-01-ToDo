@@ -22,7 +22,7 @@ export function Task({id, content, checked, onTaskCheck, onTaskDelete}: TaskProp
     }
 
     return(
-        <div className={styles.launchedTasks}>
+        <div className={checked ? styles.taskChecked : styles.task}>
             <div className={styles.checkboxTasks}>
                 <Checkbox
                     id={id} 
