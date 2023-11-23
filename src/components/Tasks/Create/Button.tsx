@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import { PlusCircle } from 'phosphor-react'
 
 import styles from './Button.module.css'
