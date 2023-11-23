@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { TaskHeader } from "./HeaderTasks";
 import { NoTasks } from "./NoTasks";
 import { Task } from "./Task";
 import { CreateTask } from "./Create";
+import { useFetch } from "../../hooks/useFetch";
 
 export type TasksDataProps = {
     id: string;
@@ -12,7 +13,15 @@ export type TasksDataProps = {
 }
 
 export function Tasks() {
+    const { data } = useFetch<TasksDataProps[]>("/task");
     const [tasks, setTasks] = useState<TasksDataProps[]>([]);
+
+    useEffect(() => {
+        if (data) {
+            setTasks(data);
+        }
+    }, [data]);
+
 
     const handleTaskCheck = (taskId: string, checked: boolean) => {
         const updatedTasks = tasks.map((task) =>
