@@ -5,6 +5,7 @@ import { NoTasks } from "./NoTasks";
 import { Task } from "./Task";
 import { CreateTask } from "./Create";
 import { useFetch } from "../../hooks/useFetch";
+import { api } from "../../services/api";
 
 export type TasksDataProps = {
     id: string;
@@ -13,7 +14,7 @@ export type TasksDataProps = {
 }
 
 export function Tasks() {
-    const { data } = useFetch<TasksDataProps[]>("/task");
+    const { data, mutate } = useFetch<TasksDataProps[]>("/task");
     const [tasks, setTasks] = useState<TasksDataProps[]>([]);
 
     useEffect(() => {
@@ -24,27 +25,47 @@ export function Tasks() {
 
 
     const handleTaskCheck = (taskId: string, checked: boolean) => {
-        const updatedTasks = tasks.map((task) =>
-            task.id === taskId ? { ...task, checked } : task
-        );
-        setTasks(updatedTasks);
+        api.put('/task/update', {
+            id: taskId,
+            checked
+        }).then(() => {
+            const updatedTask = tasks.map((task) => {
+                if (task.id == taskId) {
+                    return {
+                        ...task,
+                        checked: checked
+                    }
+                }
+
+                return task
+            })
+            mutate(updatedTask, false);
+        })
     };
 
     const handleTaskDelete = (taskId: string) => {
-        const updatedTasks = tasks.filter((task) => task.id !== taskId);
-        setTasks(updatedTasks);
+        api.post('/task/delete', {
+            id: taskId
+        }).then(() => {
+            const updatedTasks = tasks.filter((task) => {
+                if (task.id != taskId) {
+                    return task
+                }
+            })
+            mutate(updatedTasks, false);
+        })
     };
 
     return(
         <>
             <CreateTask
-                setTasks={setTasks}
+                mutate={mutate}
             />
             <TaskHeader
                 tasksLength={tasks.length}
                 completedTasks={tasks.filter(task => task.checked === true).length}
             />
-            {tasks.length === 0 ? (
+            {!tasks || tasks.length === 0 ? (
                 <NoTasks />
             ) : tasks.map(({id, content, checked}) => (
                 <Task

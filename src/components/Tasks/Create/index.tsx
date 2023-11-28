@@ -1,31 +1,33 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { v4 as uuid } from "uuid";
 
 import { CreateTaskButton } from './Button';
 
 import styles from './index.module.css';
 
 import { TasksDataProps } from '..';
+import { api } from '../../../services/api';
+import { KeyedMutator } from 'swr';
 
 type CreateTaskFormData = {
     content: string;
 }
 
 type CreateTaskProps = {
-    setTasks: React.Dispatch<React.SetStateAction<TasksDataProps[]>>
+    mutate:  KeyedMutator<TasksDataProps[]>
 }
 
-export function CreateTask({ setTasks }: CreateTaskProps) {
+export function CreateTask({ mutate }: CreateTaskProps) {
     const { register, handleSubmit, watch, reset } = useForm<CreateTaskFormData>()
     const watchContent = watch("content");
 
-    const handleCreateTask: SubmitHandler<CreateTaskFormData> = ({content}) => {
-        setTasks(tasks => [{
-            id: uuid(),
-            content,
-            checked: false
-        },...tasks]);
-        reset();
+    const handleCreateTask: SubmitHandler<CreateTaskFormData> = (data) => {
+        api.post("/task/create", data).then(() => {
+            mutate();
+            reset();
+        }).catch(() => {
+            console.log('deu errado'); 
+        })
+
     };
 
     return(
