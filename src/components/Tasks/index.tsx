@@ -25,7 +25,7 @@ export function Tasks() {
 
 
     const handleTaskCheck = (taskId: string, checked: boolean) => {
-        api.put('/task/update', {
+        api.patch('/task/update', {
             id: taskId,
             checked
         }).then(() => {
